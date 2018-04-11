@@ -18,12 +18,12 @@ const colors = [
 
 export default class HelloWorldApp extends Component {
 	state = {
-		currentNumber: 0
+		currentNumber: 'white'
 	};
 
 	randomNumber = () => {
 		return this.setState({
-			currentNumber: Math.floor(Math.random() * 12) + 0
+			currentNumber: colors[Math.floor(Math.random() * colors.length)]
 		});
 	};
 
@@ -32,7 +32,7 @@ export default class HelloWorldApp extends Component {
 			<View
 				style={{
 					flex: 1,
-					backgroundColor: colors[this.state.currentNumber],
+					backgroundColor: this.state.currentNumber,
 					justifyContent: 'center',
 					alignItems: 'center'
 				}}
